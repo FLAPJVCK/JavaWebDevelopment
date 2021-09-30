@@ -1,4 +1,4 @@
-package by.epamtc.VaskevichArtsiom.task01.task1;
+package by.epamtc.VaskevichArtsiom.task01.task01;
 
 public class runner {
     public static void main(String[] args) {

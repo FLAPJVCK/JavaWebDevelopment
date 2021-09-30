@@ -1,4 +1,4 @@
-package by.epamtc.VaskevichArtsiom.task01.task5;
+package by.epamtc.VaskevichArtsiom.task01.task06;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class service {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()){
             number = scanner.nextInt();
-            if (number <= 0){
+            if (number <= 0 || number > 86400){
                 throw new ArithmeticException();
             }
         } else {
@@ -17,11 +17,12 @@ public class service {
         return number;
     }
 
-    public static boolean isIntegerPerfect (int number){
-        boolean result = false;
-        if ((number == 6) || (number == 28) || (number == 496) || (number == 8128) || (number == 33550336)){
-            result = true;
-        }
-        return result;
+    public static int[] timeCounter(int nSeconds){
+        int hour, minute, second;
+        hour = nSeconds / 3600;
+        minute = (nSeconds - (hour * 3600)) / 60;
+        second = nSeconds - (hour * 3600) - (minute * 60);
+        return new int[]{hour, minute, second};
     }
+
 }

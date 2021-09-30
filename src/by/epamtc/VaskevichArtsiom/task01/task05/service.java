@@ -1,4 +1,4 @@
-package by.epamtc.VaskevichArtsiom.task01.task4;
+package by.epamtc.VaskevichArtsiom.task01.task05;
 
 import java.util.Scanner;
 
@@ -8,15 +8,18 @@ public class service {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()){
             number = scanner.nextInt();
-            return number;
+            if (number <= 0){
+                throw new ArithmeticException();
+            }
         } else {
             throw new ArithmeticException();
         }
+        return number;
     }
 
-    public static boolean comparisonNumbers (int a, int b, int c, int d){
+    public static boolean isIntegerPerfect (int number){
         boolean result = false;
-        if ((a & 1) + (b & 1) + (c & 1) + (d & 1) < 3){
+        if ((number == 6) || (number == 28) || (number == 496) || (number == 8128) || (number == 33550336)){
             result = true;
         }
         return result;

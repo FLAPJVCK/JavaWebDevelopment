@@ -1,4 +1,4 @@
-package by.epamtc.VaskevichArtsiom.task01.task1;
+package by.epamtc.VaskevichArtsiom.task01.task01;
 
 import java.util.Scanner;
 
