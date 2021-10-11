@@ -1,0 +1,19 @@
+package by.epamtc.VaskevichArtsiom.task01.inputException;
+
+public class InputException extends Throwable{
+    public InputException() {
+        super();
+    }
+
+    public InputException(String message) {
+        super(message);
+    }
+
+    public InputException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public InputException(Throwable cause) {
+        super(cause);
+    }
+}

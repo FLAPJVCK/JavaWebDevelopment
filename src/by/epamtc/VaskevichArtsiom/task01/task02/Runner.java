@@ -1,16 +1,20 @@
 package by.epamtc.VaskevichArtsiom.task01.task02;
 
-public class runner {
+import by.epamtc.VaskevichArtsiom.task01.inputException.InputException;
+
+import static by.epamtc.VaskevichArtsiom.task01.scanner.ScanNumber.scanPositiveIntegerNumber;
+
+public class Runner {
     public static void main(String[] args) {
         int year, month, daysInMonth;
         try {
             System.out.print("Input year ");
-            year = service.scanNumber();
+            year = scanPositiveIntegerNumber();
             System.out.print("Input the month number ");
-            month = service.scanNumber();
-            daysInMonth = service.daysInMonth(year, month);
+            month = scanPositiveIntegerNumber();
+            daysInMonth = Service.daysInMonth(year, month);
             System.out.println("In the " + month + " month of " + year + " the number of days: " + daysInMonth);
-        } catch (ArithmeticException e) {
+        } catch (InputException e) {
             System.out.println("Your input is incorrect!");
         }
     }

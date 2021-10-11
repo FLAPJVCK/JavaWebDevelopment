@@ -1,25 +1,12 @@
 package by.epamtc.VaskevichArtsiom.task01.task02;
 
-import java.util.Scanner;
+public class Service {
+    public static final int FOUR_YEARS = 4;
+    public static final int CENTURY = 100;
 
-public class service {
-    public static int scanNumber(){
-        int number;
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()){
-            number = scanner.nextInt();
-            if (number < 0){
-                throw new ArithmeticException();
-            }
-        } else {
-            throw new ArithmeticException();
-        }
-        return number;
-    }
-
-    public static int daysInMonth (int year, int month){
+    public static int daysInMonth(int year, int month) {
         int numberOfDays;
-        switch (month){
+        switch (month) {
             case 1:
             case 3:
             case 5:
@@ -38,15 +25,16 @@ public class service {
             case 2:
                 numberOfDays = isItLeapYear(year);
                 break;
-            default: throw new ArithmeticException();
+            default:
+                throw new ArithmeticException();
         }
         return numberOfDays;
     }
 
-    public static int isItLeapYear(int year){
+    public static int isItLeapYear(int year) {
         int daysInFebruary = 28;
-        if (year % 4 == 0){
-            if ((year % 100 != 0) || (year % 400 == 0)){
+        if (year % FOUR_YEARS == 0) {
+            if ((year % CENTURY != 0) || (year % (FOUR_YEARS * CENTURY) == 0)) {
                 daysInFebruary = 29;
             }
         }
